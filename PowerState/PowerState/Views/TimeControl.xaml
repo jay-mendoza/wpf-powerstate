@@ -1,0 +1,80 @@
+﻿<UserControl
+    x:Class="PowerState.Views.TimeControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source=".\Styles\TimeControl.xaml"/>
+    </UserControl.Resources>
+
+    <Border Style="{StaticResource ResourceKey=ContainerStyle}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="HourGrid" Grid.Column="0">
+                <TextBox
+                    x:Name="HourTextBox"
+                    Grid.Column="0"
+                    LostFocus="TimeTextBox_LostFocus"
+                    Style="{StaticResource ResourceKey=TimeTextStyle}"
+                    TextChanged="HourTextBox_TextChanged"
+                    />
+            </Grid>
+
+            <Grid x:Name="MinuteGrid" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="MinuteSeparator"
+                    Grid.Column="0"
+                    Style="{StaticResource ResourceKey=SeparatorStyle}"
+                    />
+                <TextBox
+                    x:Name="MinuteTextBox"
+                    Grid.Column="1"
+                    LostFocus="TimeTextBox_LostFocus"
+                    Style="{StaticResource ResourceKey=TimeTextStyle}"
+                    TextChanged="MinuteTextBox_TextChanged"
+                    />
+            </Grid>
+
+            <Grid x:Name="SecondGrid" Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    x:Name="SecondSeparator"
+                    Grid.Column="0"
+                    Style="{StaticResource ResourceKey=SeparatorStyle}"
+                    />
+                <TextBox
+                    x:Name="SecondTextBox"
+                    Grid.Column="1"
+                    LostFocus="TimeTextBox_LostFocus"
+                    Style="{StaticResource ResourceKey=TimeTextStyle}"
+                    TextChanged="SecondTextBox_TextChanged"
+                    />
+            </Grid>
+            <Button
+                x:Name="TimeModeSelectButton"
+                Click="TimeModeSelectButton_Click"
+                Grid.Column="4"
+                Style="{StaticResource ResourceKey=TimeModeSelectButtonStyle}"/>
+        </Grid>
+
+        
+    </Border>
+    
+</UserControl>
