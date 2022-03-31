@@ -1,7 +1,9 @@
-# Power State (WPF)
+# Power | State (WPF)
 **Last Updated:** 07 March 2014
 
-This is the code repository for a WPF app called "Power State".<br/>
+![Screenshot](screenshots/wpf-powerstate-001.png)
+
+This is the code repository for a WPF app called "Power | State".<br/>
 It's purpose is a one-stop app for controlling Windows power states::
 - Screen Off
 - Screen Lock
